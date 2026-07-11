@@ -20,7 +20,7 @@ on my own machine, running Ubuntu 26.04 LTS.
 Parsec's Linux client connects fine (STUN, encryption, audio all
 negotiate successfully), but every video frame fails to decode
 immediately, with `decode_frame = -17` in `~/.parsec/log.txt`. This can
-look like a GPU/driver/VAAPI problem, but in my case it wasn't — see
+look like a GPU/driver/VAAPI problem, but in my case it wasn't. See
 [`docs/DIAGNOSIS.md`](docs/DIAGNOSIS.md) for the full investigation and
 everything that was ruled out along the way.
 
@@ -53,7 +53,7 @@ a dedicated, isolated folder:
 
 Parsec is then launched with `LD_LIBRARY_PATH` pointed at that folder.
 **As a safety measure, this scopes the old libraries to the Parsec
-process only** — nothing under `/usr/lib` is touched, no `apt`/`dpkg`
+process only**: nothing under `/usr/lib` is touched, no `apt`/`dpkg`
 state is modified, and no other application on your system will resolve
 or load these older libraries. Every other app keeps using your distro's
 normal, current FFmpeg exactly as before. This was verified directly by
